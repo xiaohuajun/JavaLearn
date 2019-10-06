@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mybatis.PersonMapper" >
+    <resultMap id="BaseResultMap" type="mybatis.bean.Person" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="gender" property="gender" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <insert id="addPersons">
+        insert into person(username,email,gender) VALUES
+        <foreach collection="persons" item="person" separator=",">
+            (#{person.username},#{person.email},#{person.gender})
+        </foreach>
+    </insert>
+
+</mapper>
