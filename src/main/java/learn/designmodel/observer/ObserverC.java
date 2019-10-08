@@ -15,6 +15,5 @@ public class ObserverC implements Observer {
         //与被观察者的状态一致
         observerCState = state;
         System.out.println("ObserverB接收消息 " + state);
-
     }
 }
