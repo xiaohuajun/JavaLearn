@@ -43,6 +43,7 @@
         </encoder>
         <!--向文件尾部添加日志-->
         <append>true</append>
+        <!--只接受级别大于info的日志-->
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>info</level>
         </filter>
@@ -104,6 +105,7 @@
             <pattern>${pattern}</pattern>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--只接受info级别的日志-->
             <level>INFO</level>
             <onMatch>ACCEPT</onMatch>
             <onMismatch>DENY</onMismatch>
