@@ -113,9 +113,9 @@
     </appender>
 
 
-    <!--异步输出-->
+    <!--异步写入-->
     <appender name="async_app_file_info" class="ch.qos.logback.classic.AsyncAppender">
-        <!--不丢失日志信息，如果队列满了80%，则会丢掉，trace,debug,info的日志-->
+        <!--不丢失日志信息，如果队列满了80%，则会丢掉-trace,debug,info的日志-->
         <discardingThreshold>0</discardingThreshold>
         <!--对列的深度，默认是256，大了会影响性能-->
         <queueSize>256</queueSize>
